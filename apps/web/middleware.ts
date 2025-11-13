@@ -1,13 +1,6 @@
 import { env } from '@/env';
 import { internationalizationMiddleware } from '@repo/internationalization/middleware';
-import { parseError } from '@repo/observability/error';
-import { secure } from '@repo/security';
-import {
-  noseconeMiddleware,
-  noseconeOptions,
-  noseconeOptionsWithToolbar,
-} from '@repo/security/middleware';
-import type { NextMiddleware, NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 export const config = {
@@ -15,10 +8,6 @@ export const config = {
   // middleware on all routes except for static assets and Posthog ingest
   matcher: ['/((?!_next/static|_next/image|ingest|favicon.ico).*)'],
 };
-
-const securityHeaders = env.FLAGS_SECRET
-  ? noseconeMiddleware(noseconeOptionsWithToolbar)
-  : noseconeMiddleware(noseconeOptions);
 
 const middleware = async (request: NextRequest) => {
   const i18nResponse = internationalizationMiddleware({
@@ -29,11 +18,15 @@ const middleware = async (request: NextRequest) => {
     return i18nResponse;
   }
 
+  // Skip heavy security checks if not configured
   if (!env.ARCJET_KEY) {
-    return securityHeaders();
+    return NextResponse.next();
   }
 
+  // Lazy load security modules only when needed
   try {
+    const { secure } = await import('@repo/security');
+    
     await secure(
       [
         // See https://docs.arcjet.com/bot-protection/identifying-bots
@@ -44,13 +37,12 @@ const middleware = async (request: NextRequest) => {
       request
     );
 
-    return securityHeaders();
+    return NextResponse.next();
   } catch (error) {
-    const message = parseError(error);
+    const message = error instanceof Error ? error.message : 'Access denied';
 
     return NextResponse.json({ error: message }, { status: 403 });
   }
 };
-
 
 export default middleware;

@@ -4,7 +4,14 @@ import { config, withAnalyzer } from '@repo/next-config';
 import { withLogging } from '@repo/observability/next-config';
 import type { NextConfig } from 'next';
 
-let nextConfig: NextConfig = withToolbar(withLogging(config));
+let nextConfig: NextConfig = {
+  ...withToolbar(withLogging(config)),
+  experimental: {
+    ...config.experimental,
+    // Optimize middleware bundle size
+    optimizePackageImports: ['@repo/internationalization'],
+  },
+};
 
 if (process.env.NODE_ENV === 'production') {
   const redirects: NextConfig['redirects'] = async () => [
