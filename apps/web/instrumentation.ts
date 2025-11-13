@@ -1,3 +1,4 @@
-import { initializeSentry } from '@repo/observability/instrumentation';
-
-export const register = initializeSentry();
+// Instrumentation file - can be used for observability setup
+export function register() {
+  // Add instrumentation here if needed
+}

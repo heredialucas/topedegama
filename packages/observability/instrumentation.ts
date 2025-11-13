@@ -1,11 +1,6 @@
-export const initializeSentry = () => {
-  return async () => {
-    if (process.env.NEXT_RUNTIME === 'nodejs') {
-      await import('./sentry.server.config');
-    }
-
-    if (process.env.NEXT_RUNTIME === 'edge') {
-      await import('./sentry.edge.config');
-    }
+// Observability instrumentation can be added here
+export const initializeObservability = () => {
+  return () => {
+    // Add your observability setup here
   };
 };
