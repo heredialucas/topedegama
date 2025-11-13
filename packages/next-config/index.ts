@@ -11,11 +11,11 @@ export const config: NextConfig = {
     serverActions: {
       bodySizeLimit: '10mb',
     },
-    serverComponentsExternalPackages: [
-      '@arcjet/next',
-      '@nosecone/next',
-    ],
   },
+  serverExternalPackages: [
+    '@arcjet/next',
+    '@nosecone/next',
+  ],
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
