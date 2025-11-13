@@ -1,7 +1,5 @@
-import { env } from '@/env';
-import { internationalizationMiddleware } from '@repo/internationalization/middleware';
-import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 export const config = {
   // matcher tells Next.js which routes to run the middleware on. This runs the
@@ -9,40 +7,21 @@ export const config = {
   matcher: ['/((?!_next/static|_next/image|ingest|favicon.ico).*)'],
 };
 
-const middleware = async (request: NextRequest) => {
-  const i18nResponse = internationalizationMiddleware({
-    headers: request.headers,
-    nextUrl: request.nextUrl
-  });
-  if (i18nResponse) {
-    return i18nResponse;
-  }
-
-  // Skip heavy security checks if not configured
-  if (!env.ARCJET_KEY) {
+// Ultra-minimal middleware for i18n - Spanish only
+// Removed ALL heavy dependencies to stay under 1MB edge function limit
+export default function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  
+  // Only Spanish locale based on languine.json config
+  const defaultLocale = 'es';
+  
+  // Check if pathname already has locale prefix
+  if (pathname.startsWith(`/${defaultLocale}/`) || pathname === `/${defaultLocale}`) {
     return NextResponse.next();
   }
 
-  // Lazy load security modules only when needed
-  try {
-    const { secure } = await import('@repo/security');
-    
-    await secure(
-      [
-        // See https://docs.arcjet.com/bot-protection/identifying-bots
-        'CATEGORY:SEARCH_ENGINE', // Allow search engines
-        'CATEGORY:PREVIEW', // Allow preview links to show OG images
-        'CATEGORY:MONITOR', // Allow uptime monitoring services
-      ],
-      request
-    );
-
-    return NextResponse.next();
-  } catch (error) {
-    const message = error instanceof Error ? error.message : 'Access denied';
-
-    return NextResponse.json({ error: message }, { status: 403 });
-  }
-};
-
-export default middleware;
+  // Always redirect to Spanish locale
+  const url = request.nextUrl.clone();
+  url.pathname = `/${defaultLocale}${pathname}`;
+  return NextResponse.redirect(url);
+}
