@@ -63,6 +63,10 @@ export const config: NextConfig = {
     return config;
   },
 
+  turbopack: {
+    resolveAlias: {},
+  },
+
   // This is required to support PostHog trailing slash API requests
   skipTrailingSlashRedirect: true,
 };
