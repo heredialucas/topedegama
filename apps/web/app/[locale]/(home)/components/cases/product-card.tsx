@@ -7,7 +7,18 @@ import type { CaseStudy } from './cases';
 
 export type ProjectCardProps = {
     project: CaseStudy;
-    dictionary: Dictionary;
+    dictionary: Dictionary & {
+        web: {
+            home: {
+                cases: {
+                    projectStatus?: {
+                        finished?: string;
+                        inProgress?: string;
+                    };
+                };
+            };
+        };
+    };
     size: string;
     onClick: (project: CaseStudy) => void;
 };
@@ -58,8 +69,8 @@ export const ProductCard = ({ project, dictionary, size, onClick }: ProjectCardP
                     ></div>
                     <span className="text-xs text-muted-foreground capitalize">
                         {project.status === "finished"
-                            ? dictionary.web.home.cases.projectStatus.finished
-                            : dictionary.web.home.cases.projectStatus.inProgress}
+                            ? dictionary.web.home.cases.projectStatus?.finished || 'Finalizado'
+                            : dictionary.web.home.cases.projectStatus?.inProgress || 'En progreso'}
                     </span>
                 </div>
 

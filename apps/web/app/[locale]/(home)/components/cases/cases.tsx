@@ -8,7 +8,20 @@ import { ProjectModal } from './project-modal';
 import Image from 'next/image';
 
 type CasesProps = {
-  dictionary: Dictionary;
+  dictionary: Dictionary & {
+    web: {
+      home: {
+        cases: {
+          projectsTitle?: string;
+          subtitle?: string;
+          projectStatus?: {
+            finished?: string;
+            inProgress?: string;
+          };
+        };
+      };
+    };
+  };
   projects: CaseStudy[];
 };
 
@@ -114,8 +127,8 @@ export const Cases = ({ dictionary, projects }: CasesProps) => {
                     ></div>
                     <span className="text-xs text-white/70 capitalize">
                       {project.status === "finished"
-                        ? dictionary.web.home.cases.projectStatus.finished
-                        : dictionary.web.home.cases.projectStatus.inProgress}
+                        ? dictionary.web.home.cases.projectStatus?.finished || 'Finalizado'
+                        : dictionary.web.home.cases.projectStatus?.inProgress || 'En progreso'}
                     </span>
                   </div>
 
@@ -171,8 +184,8 @@ export const Cases = ({ dictionary, projects }: CasesProps) => {
                       ></div>
                       <span className="text-xs text-white/70 capitalize">
                         {project.status === "finished"
-                          ? dictionary.web.home.cases.projectStatus.finished
-                          : dictionary.web.home.cases.projectStatus.inProgress}
+                          ? dictionary.web.home.cases.projectStatus?.finished || 'Finalizado'
+                          : dictionary.web.home.cases.projectStatus?.inProgress || 'En progreso'}
                       </span>
                     </div>
 

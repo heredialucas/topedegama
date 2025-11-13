@@ -7,7 +7,25 @@ import { Newspaper, Mail, Lock } from 'lucide-react';
 import type { Dictionary } from '@repo/internationalization';
 
 type NewsletterProps = {
-    dictionary: Dictionary;
+    dictionary: Dictionary & {
+        web: {
+            home: {
+                faq: {
+                    newsletter?: {
+                        validation?: string;
+                        title?: string;
+                        description?: string;
+                        success?: string;
+                        error?: string;
+                        placeholder?: string;
+                        subscribing?: string;
+                        subscribe?: string;
+                        privacy?: string;
+                    };
+                };
+            };
+        };
+    };
 };
 
 export const Newsletter = ({ dictionary }: NewsletterProps) => {
@@ -25,7 +43,7 @@ export const Newsletter = ({ dictionary }: NewsletterProps) => {
         if (!newsletterEmail || !newsletterEmail.includes('@')) {
             setNewsletterStatus({
                 type: 'error',
-                message: dictionary.web.home.faq.newsletter.validation || 'Please enter a valid email'
+                message: dictionary.web.home.faq.newsletter?.validation || 'Please enter a valid email'
             });
             return;
         }
@@ -40,14 +58,14 @@ export const Newsletter = ({ dictionary }: NewsletterProps) => {
             // Éxito
             setNewsletterStatus({
                 type: 'success',
-                message: dictionary.web.home.faq.newsletter.success || 'Thank you for subscribing!'
+                message: dictionary.web.home.faq.newsletter?.success || 'Thank you for subscribing!'
             });
             setNewsletterEmail('');
         } catch (error) {
             // Error
             setNewsletterStatus({
                 type: 'error',
-                message: dictionary.web.home.faq.newsletter.error || 'Something went wrong. Please try again.'
+                message: dictionary.web.home.faq.newsletter?.error || 'Something went wrong. Please try again.'
             });
         } finally {
             setSendingNewsletter(false);
@@ -92,11 +110,11 @@ export const Newsletter = ({ dictionary }: NewsletterProps) => {
                             <Newspaper className="w-8 h-8" />
                         </motion.div>
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                            {dictionary.web.home.faq.newsletter.title || 'Get insights for your business'}
+                            {dictionary.web.home.faq.newsletter?.title || 'Get insights for your business'}
                         </h2>
                         <div className="w-20 h-1 bg-gradient-to-r from-[#0d4b3d]/70 to-[#0d4b3d] rounded-full mx-auto mb-6"></div>
                         <p className="text-lg max-w-2xl mx-auto">
-                            {dictionary.web.home.faq.newsletter.description || 'Subscribe to our newsletter to receive tips, case studies, and updates on how to leverage your data to grow.'}
+                            {dictionary.web.home.faq.newsletter?.description || 'Subscribe to our newsletter to receive tips, case studies, and updates on how to leverage your data to grow.'}
                         </p>
                     </div>
 
@@ -118,7 +136,7 @@ export const Newsletter = ({ dictionary }: NewsletterProps) => {
                                     </div>
                                     <input
                                         type="email"
-                                        placeholder={dictionary.web.home.faq.newsletter.placeholder || 'Your email address'}
+                                        placeholder={dictionary.web.home.faq.newsletter?.placeholder || 'Your email address'}
                                         value={newsletterEmail}
                                         onChange={(e) => setNewsletterEmail(e.target.value)}
                                         required
@@ -132,8 +150,8 @@ export const Newsletter = ({ dictionary }: NewsletterProps) => {
                                     className="md:w-auto w-full bg-gradient-to-r from-[#0d4b3d] to-[#1a6b58] text-white px-8 py-3 rounded-xl font-medium hover:opacity-90 transition-all duration-300 shadow-lg shadow-[#0d4b3d]/25 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {sendingNewsletter
-                                        ? (dictionary.web.home.faq.newsletter.subscribing || 'Subscribing...')
-                                        : (dictionary.web.home.faq.newsletter.subscribe || 'Subscribe')}
+                                        ? (dictionary.web.home.faq.newsletter?.subscribing || 'Subscribing...')
+                                        : (dictionary.web.home.faq.newsletter?.subscribe || 'Subscribe')}
                                 </motion.button>
                             </form>
                         </div>
@@ -154,7 +172,7 @@ export const Newsletter = ({ dictionary }: NewsletterProps) => {
 
                         <div className="mt-6 flex items-center justify-center gap-2 text-sm">
                             <Lock className="w-4 h-4" />
-                            <span>{dictionary.web.home.faq.newsletter.privacy || 'We respect your privacy. No spam.'}</span>
+                            <span>{dictionary.web.home.faq.newsletter?.privacy || 'We respect your privacy. No spam.'}</span>
                         </div>
                     </motion.div>
                 </motion.div>

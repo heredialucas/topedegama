@@ -48,7 +48,7 @@ export async function updateProfile(userId: string, formData: FormData) {
         const validated = profileSchema.safeParse(data);
 
         if (!validated.success) {
-            return { success: false, message: validated.error.errors[0].message };
+            return { success: false, message: validated.error.issues[0].message };
         }
 
         await updateUserService(userId, { ...validated.data, password: '' });
@@ -70,7 +70,7 @@ export async function changePassword(userId: string, formData: FormData) {
         const validated = passwordSchema.safeParse(data);
 
         if (!validated.success) {
-            return { success: false, message: validated.error.errors[0].message };
+            return { success: false, message: validated.error.issues[0].message };
         }
 
         const result = await changePasswordService(
@@ -108,7 +108,7 @@ export async function createUser(formData: FormData) {
 
         const validated = userSchema.safeParse(data);
         if (!validated.success) {
-            return { success: false, message: validated.error.errors[0].message };
+            return { success: false, message: validated.error.issues[0].message };
         }
         if (!validated.data.password) {
             return { success: false, message: "La contraseña es requerida para nuevos usuarios." };
@@ -145,7 +145,7 @@ export async function updateUser(userId: string, formData: FormData) {
 
         const validated = userSchema.safeParse(data);
         if (!validated.success) {
-            return { success: false, message: validated.error.errors[0].message };
+            return { success: false, message: validated.error.issues[0].message };
         }
 
         await updateUserService(userId, { ...validated.data, role: validated.data.role as UserRole, password: validated.data.password || '' });

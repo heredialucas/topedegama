@@ -9,7 +9,9 @@ export const SnowParticlesWrapper = () => {
 
     // Only show particles after mounting to avoid hydration mismatch
     useEffect(() => {
-        setMounted(true);
+        // Delay mounting to ensure client-side only rendering
+        const timeout = setTimeout(() => setMounted(true), 0);
+        return () => clearTimeout(timeout);
 
         // Check for dark mode using CSS
         const checkDarkMode = () => {
@@ -30,7 +32,8 @@ export const SnowParticlesWrapper = () => {
         return () => observer.disconnect();
     }, []);
 
-    if (!mounted) return null;
+    // Return null on server and initial client render to prevent hydration mismatch
+    if (!mounted) return <div suppressHydrationWarning />;
 
     return <SnowParticles isDarkMode={isDarkMode} count={70} />;
 }; 

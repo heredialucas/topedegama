@@ -20,7 +20,23 @@ import {
 
 type ProjectModalProps = {
     project: CaseStudy | null;
-    dictionary: Dictionary;
+    dictionary: Dictionary & {
+        web: {
+            home: {
+                cases: {
+                    projectStatus?: {
+                        finished?: string;
+                        inProgress?: string;
+                    };
+                    modal?: {
+                        description?: string;
+                        technologies?: string;
+                        features?: string;
+                    };
+                };
+            };
+        };
+    };
     onClose: () => void;
     open: boolean;
 };
@@ -43,8 +59,8 @@ export const ProjectModal = ({ project, dictionary, onClose, open }: ProjectModa
                         <DialogDescription>
                             <span className="text-xs text-muted-foreground capitalize">
                                 {project.status === "finished"
-                                    ? dictionary.web.home.cases.projectStatus.finished
-                                    : dictionary.web.home.cases.projectStatus.inProgress}
+                                    ? dictionary.web.home.cases.projectStatus?.finished || 'Finalizado'
+                                    : dictionary.web.home.cases.projectStatus?.inProgress || 'En progreso'}
                             </span>
                         </DialogDescription>
                     </div>
@@ -77,7 +93,7 @@ export const ProjectModal = ({ project, dictionary, onClose, open }: ProjectModa
                 {/* Project Description */}
                 <div className="space-y-4">
                     <div>
-                        <h3 className="text-base font-medium mb-2">{dictionary.web.home.cases.modal.description || 'Description'}</h3>
+                        <h3 className="text-base font-medium mb-2">{dictionary.web.home.cases.modal?.description || 'Description'}</h3>
                         <p className="text-muted-foreground">{project.description}</p>
                         {project.status_description && (
                             <p className="text-muted-foreground mt-2">{project.status_description}</p>
@@ -86,7 +102,7 @@ export const ProjectModal = ({ project, dictionary, onClose, open }: ProjectModa
 
                     {/* Technologies */}
                     <div>
-                        <h3 className="text-base font-medium mb-2">{dictionary.web.home.cases.modal.technologies || 'Technologies'}</h3>
+                        <h3 className="text-base font-medium mb-2">{dictionary.web.home.cases.modal?.technologies || 'Technologies'}</h3>
                         <div className="flex flex-wrap gap-2">
                             {project.technologies.map((tech, index) => (
                                 <span
@@ -101,7 +117,7 @@ export const ProjectModal = ({ project, dictionary, onClose, open }: ProjectModa
 
                     {/* Features */}
                     <div>
-                        <h3 className="text-base font-medium mb-2">{dictionary.web.home.cases.modal.features || 'Features'}</h3>
+                        <h3 className="text-base font-medium mb-2">{dictionary.web.home.cases.modal?.features || 'Features'}</h3>
                         <ul className="list-disc pl-5 space-y-1">
                             {project.features.map((feature, index) => (
                                 <li key={index} className="text-muted-foreground">

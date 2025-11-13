@@ -17,7 +17,29 @@ import tablaIngresos from '@/public/tabla-ingresos.png';
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 type HeroProps = {
-  dictionary: Dictionary;
+  dictionary: Dictionary & {
+    web: {
+      home: {
+        hero: {
+          heading?: string;
+        };
+        features: {
+          featureOne?: {
+            title?: string;
+            paragraph?: string;
+          };
+          featureTwo?: {
+            title?: string;
+            paragraph?: string;
+          };
+          featureThree?: {
+            title?: string;
+            paragraph?: string;
+          };
+        };
+      };
+    };
+  };
 };
 
 export const Hero = ({ dictionary }: HeroProps) => {
@@ -86,8 +108,8 @@ export const Hero = ({ dictionary }: HeroProps) => {
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 className="absolute top-5 left-5 w-80 h-auto bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-4 flex flex-col justify-center items-center transform -rotate-12 z-10"
               >
-                <Image src={pedidosPorDia} alt={dictionary.web.home.features.featureOne.title || "Advanced Analytics"} className="w-full h-auto object-contain mb-2 rounded-md" />
-                <h3 className="text-lg font-bold text-center text-gray-800 dark:text-white">{dictionary.web.home.features.featureOne.title || "Advanced Analytics"}</h3>
+                <Image src={pedidosPorDia} alt={dictionary.web.home.features.featureOne?.title || "Advanced Analytics"} className="w-full h-auto object-contain mb-2 rounded-md" />
+                <h3 className="text-lg font-bold text-center text-gray-800 dark:text-white">{dictionary.web.home.features.featureOne?.title || "Advanced Analytics"}</h3>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 50, rotate: 15 }}
@@ -95,8 +117,8 @@ export const Hero = ({ dictionary }: HeroProps) => {
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                 className="absolute bottom-5 left-20 w-96 h-auto bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-4 flex flex-col justify-center items-center transform rotate-6 z-20"
               >
-                <Image src={piePorCategorias} alt={dictionary.web.home.features.featureTwo.title || "Client Segmentation"} className="w-full h-auto object-contain mb-2 rounded-md" />
-                <h3 className="text-lg font-bold text-center text-gray-800 dark:text-white">{dictionary.web.home.features.featureTwo.title || "Client Segmentation"}</h3>
+                <Image src={piePorCategorias} alt={dictionary.web.home.features.featureTwo?.title || "Client Segmentation"} className="w-full h-auto object-contain mb-2 rounded-md" />
+                <h3 className="text-lg font-bold text-center text-gray-800 dark:text-white">{dictionary.web.home.features.featureTwo?.title || "Client Segmentation"}</h3>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -104,8 +126,8 @@ export const Hero = ({ dictionary }: HeroProps) => {
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
                 className="absolute top-10 right-5 w-80 h-auto bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-4 flex flex-col justify-center items-center transform rotate-12 z-10"
               >
-                <Image src={tablaIngresos} alt={dictionary.web.home.features.featureThree.title || "Direct Communication"} className="w-full h-auto object-contain mb-2 rounded-md" />
-                <h3 className="text-lg font-bold text-center text-gray-800 dark:text-white">{dictionary.web.home.features.featureThree.title || "Direct Communication"}</h3>
+                <Image src={tablaIngresos} alt={dictionary.web.home.features.featureThree?.title || "Direct Communication"} className="w-full h-auto object-contain mb-2 rounded-md" />
+                <h3 className="text-lg font-bold text-center text-gray-800 dark:text-white">{dictionary.web.home.features.featureThree?.title || "Direct Communication"}</h3>
               </motion.div>
             </div>
           </motion.div>

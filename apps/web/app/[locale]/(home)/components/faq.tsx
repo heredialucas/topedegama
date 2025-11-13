@@ -14,7 +14,26 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../lib/animations';
 
 type FAQProps = {
-  dictionary: Dictionary;
+  dictionary: Dictionary & {
+    web: {
+      home: {
+        faq: {
+          questions?: { question: string; answer: string }[];
+          description?: string;
+          contact?: {
+            title?: string;
+            description?: string;
+            cta?: string;
+          };
+          newsletter?: {
+            validation?: string;
+            title?: string;
+            description?: string;
+          };
+        };
+      };
+    };
+  };
   locale: string;
 };
 

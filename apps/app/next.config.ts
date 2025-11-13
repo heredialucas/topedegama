@@ -4,7 +4,10 @@ import { config, withAnalyzer } from '@repo/next-config';
 import { withLogging, withSentry } from '@repo/observability/next-config';
 import type { NextConfig } from 'next';
 
-let nextConfig: NextConfig = withToolbar(withLogging(config));
+let nextConfig: NextConfig = {
+  ...withToolbar(withLogging(config)),
+  turbopack: {},
+};
 
 if (env.VERCEL) {
   nextConfig = withSentry(nextConfig);

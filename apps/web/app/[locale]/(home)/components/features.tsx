@@ -6,25 +6,44 @@ import { motion } from 'framer-motion';
 import { staggerContainer, fadeIn } from '../lib/animations';
 
 type FeaturesProps = {
-  dictionary: Dictionary;
+  dictionary: Dictionary & {
+    web: {
+      home: {
+        features: {
+          featureOne?: {
+            title?: string;
+            paragraph?: string;
+          };
+          featureTwo?: {
+            title?: string;
+            paragraph?: string;
+          };
+          featureThree?: {
+            title?: string;
+            paragraph?: string;
+          };
+        };
+      };
+    };
+  };
 };
 
 export const Features = ({ dictionary }: FeaturesProps) => {
   const features = [
     {
       icon: <BarChart3 className="w-6 h-6 text-[#0d4b3d] dark:text-white" />,
-      title: dictionary.web.home.features.featureOne.title,
-      description: dictionary.web.home.features.featureOne.paragraph
+      title: dictionary.web.home.features.featureOne?.title || "Feature One",
+      description: dictionary.web.home.features.featureOne?.paragraph || "Description of feature one."
     },
     {
       icon: <Users className="w-6 h-6 text-[#0d4b3d] dark:text-white" />,
-      title: dictionary.web.home.features.featureTwo.title,
-      description: dictionary.web.home.features.featureTwo.paragraph
+      title: dictionary.web.home.features.featureTwo?.title || "Feature Two",
+      description: dictionary.web.home.features.featureTwo?.paragraph || "Description of feature two."
     },
     {
       icon: <Smartphone className="w-6 h-6 text-[#0d4b3d] dark:text-white" />,
-      title: dictionary.web.home.features.featureThree.title,
-      description: dictionary.web.home.features.featureThree.paragraph
+      title: dictionary.web.home.features.featureThree?.title || "Feature Three",
+      description: dictionary.web.home.features.featureThree?.paragraph || "Description of feature three."
     }
   ];
 

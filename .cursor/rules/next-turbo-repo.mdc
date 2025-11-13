@@ -56,7 +56,7 @@ apps/
 │   ├── lib/               # Utilidades específicas de la app
 │   └── types/             # Tipos específicos de la app
 ├── api/                   # API backend
-├── web-base/              # Template base
+├── web/              # Template base
 ├── docs/                  # Documentación
 ├── email/                 # Servicio de emails
 ├── storybook/             # Documentación de componentes

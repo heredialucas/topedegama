@@ -15,13 +15,27 @@ type HomeProps = {
   }>;
 };
 
+type MetaType = {
+  title: string | { template: string; default: string };
+  description: string;
+  image?: string;
+};
+
 export const generateMetadata = async ({
   params,
 }: HomeProps): Promise<Metadata> => {
   const { locale } = await params;
   const dictionary = await getDictionary(locale);
 
-  return createMetadata(dictionary.web.home.meta);
+  const meta = dictionary.web.home.meta;
+  const metadata: { title: string; description: string; image?: string } = {
+    title: typeof meta.title === 'object' ? meta.title.default : meta.title,
+    description: meta.description
+  };
+  if ('image' in meta && typeof meta.image === 'string') {
+    metadata.image = meta.image;
+  }
+  return createMetadata(metadata);
 };
 
 const Home = async ({ params }: HomeProps) => {

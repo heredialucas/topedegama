@@ -7,7 +7,15 @@ import { ShoppingBag, ArrowRight, Smartphone, Utensils, MapPin } from 'lucide-re
 import Link from 'next/link';
 
 type CTAProps = {
-  dictionary: Dictionary;
+  dictionary: Dictionary & {
+    web: {
+      home: {
+        cta: {
+          heading?: string;
+        };
+      };
+    };
+  };
   locale?: string;
 };
 

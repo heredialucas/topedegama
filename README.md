@@ -16,7 +16,7 @@ App Wise Starter Kit es un boilerplate empresarial diseñado específicamente pa
 
 #### Apps
 - **`apps/web`**: Aplicación principal de Next.js
-- **`apps/web-base`**: Template base para aplicaciones web
+- **`apps/web`**: Template base para aplicaciones web
 - **`apps/api`**: API principal del proyecto
 - **`apps/app`**: Aplicación móvil
 - **`apps/docs`**: Documentación del proyecto

@@ -22,7 +22,19 @@ type Testimonial = {
 };
 
 type TestimonialsProps = {
-  dictionary: Dictionary;
+  dictionary: Dictionary & {
+    web: {
+      home: {
+        testimonials: {
+          items?: {
+            name?: string;
+            role?: string;
+            description?: string;
+          }[];
+        };
+      };
+    };
+  };
 };
 
 export const Testimonials = ({ dictionary }: TestimonialsProps) => {
@@ -66,8 +78,8 @@ export const Testimonials = ({ dictionary }: TestimonialsProps) => {
   ];
 
   // Get testimonials from dictionary if available, otherwise use samples
-  const testimonials: Testimonial[] = dictionary.web.home.testimonials?.items?.length > 0
-    ? dictionary.web.home.testimonials.items
+  const testimonials: Testimonial[] = Array.isArray(dictionary.web.home.testimonials?.items) && dictionary.web.home.testimonials.items.length > 0
+    ? (dictionary.web.home.testimonials.items as Testimonial[])
     : sampleTestimonials;
 
   useEffect(() => {

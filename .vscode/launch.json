@@ -20,7 +20,7 @@
       "url": "http://localhost:3001"
     },
     {
-      "name": "Next.js: debug client-side (web-base)",
+      "name": "Next.js: debug client-side (web)",
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:3007"

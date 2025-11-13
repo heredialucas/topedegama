@@ -10,7 +10,16 @@ import logoWithBg from '@/public/logoWithBg.png';
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 type StatsProps = {
-  dictionary: Dictionary;
+  dictionary: Dictionary & {
+    web: {
+      home: {
+        stats: {
+          process?: { title?: string; description?: string }[];
+          description?: string;
+        };
+      };
+    };
+  };
 };
 
 export const Stats = ({ dictionary }: StatsProps) => {
