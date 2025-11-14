@@ -7,6 +7,7 @@ import { FAQ } from './components/faq';
 import { Features } from './components/features';
 import { Stats } from './components/stats';
 import { Testimonials } from './components/testimonials';
+import ScrollToTopClient from './ScrollToTopClient';
 
 type HomeProps = {
   params: Promise<{
@@ -37,12 +38,15 @@ export const generateMetadata = async ({
   return createMetadata(metadata);
 };
 
+
 const Home = async ({ params }: HomeProps) => {
   const { locale } = await params;
   const dictionary = await getDictionary(locale);
 
+
   return (
     <>
+      <ScrollToTopClient />
       <Hero dictionary={dictionary} />
       <Features dictionary={dictionary} />
       <Stats dictionary={dictionary} />
