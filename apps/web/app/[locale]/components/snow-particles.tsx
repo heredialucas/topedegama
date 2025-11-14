@@ -18,7 +18,7 @@ type SnowParticlesProps = {
     isDarkMode?: boolean;
 };
 
-export const SnowParticles = ({ count = 50, isDarkMode = false }: SnowParticlesProps) => {
+export const SnowParticles = ({ count = 10, isDarkMode = false }: SnowParticlesProps) => {
     const [particles, setParticles] = useState<Particle[]>([]);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
@@ -98,18 +98,18 @@ export const SnowParticles = ({ count = 50, isDarkMode = false }: SnowParticlesP
         id,
         x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
         y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-        size: Math.random() * 4 + 1,
+        size: Math.random() * 5 + 2,
         speed: Math.random() * 1 + 0.1,
-        opacity: Math.random() * 0.7 + 0.1,
+        opacity: Math.random() * 0.6 + 0.4,
         twinkleSpeed: Math.random() * 0.01 + 0.001,
         twinkleDirection: Math.random() > 0.5
     });
 
-    // Determine color based on background
-    const particleColor = isDarkMode ? 'rgba(34, 197, 94, ' : 'rgba(21, 128, 61, ';
+    // White particles for all backgrounds
+    const particleColor = 'rgba(255, 255, 255, ';
 
     return (
-        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
             {particles.map(particle => (
                 <div
                     key={particle.id}

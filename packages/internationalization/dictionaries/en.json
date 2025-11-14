@@ -1,7 +1,7 @@
 {
   "app": {
     "admin": {
-      "title": "Repartito - Admin Panel",
+      "title": "TopeDeGama - Admin Panel",
       "navigation": {
         "dashboard": "Dashboard",
         "analytics": "Analytics",
@@ -141,16 +141,16 @@
         }
       },
       "layout": {
-        "title": "Repartito Administration Panel",
-        "description": "Access Repartito's administrative tools to manage your business efficiently."
+        "title": "TopeDeGama Administration Panel",
+        "description": "Access TopeDeGama's administrative tools to manage your business efficiently."
       },
       "dashboard": {
-        "title": "Repartito Administration Panel",
-        "description": "Access Repartito's administrative tools to manage your business efficiently."
+        "title": "TopeDeGama Administration Panel",
+        "description": "Access TopeDeGama's administrative tools to manage your business efficiently."
       },
       "pageTitles": {
-        "title": "Repartito - Admin Panel",
-        "description": "Access Repartito's administrative tools to manage your business efficiently."
+        "title": "TopeDeGama - Admin Panel",
+        "description": "Access TopeDeGama's administrative tools to manage your business efficiently."
       },
       "permissions": {
         "groups": {
@@ -338,25 +338,25 @@
     },
     "home": {
       "meta": {
-        "title": "Repartito - Business Metrics for Client Retention",
-        "description": "Repartito gives you the necessary tools to analyze your business metrics, understand your clients' behavior and make strategic decisions to increase retention and sales."
+        "title": "TopeDeGama - Business Metrics for Client Retention",
+        "description": "TopeDeGama gives you the necessary tools to analyze your business metrics, understand your clients' behavior and make strategic decisions to increase retention and sales."
       },
       "hero": {
         "title": "The platform that boosts your business",
-        "paragraph": "Repartito gives you the necessary tools to analyze your business metrics, understand your clients' behavior and make strategic decisions to increase retention and sales.",
+        "paragraph": "TopeDeGama gives you the necessary tools to analyze your business metrics, understand your clients' behavior and make strategic decisions to increase retention and sales.",
         "primaryCta": "Get Started",
         "secondaryCta": "Contact Sales"
       },
       "features": {
-        "title": "Why Choose Repartito",
-        "paragraph": "From detailed analytics to communication tools, Repartito has everything you need to take your business to the next level."
+        "title": "Why Choose TopeDeGama",
+        "paragraph": "From detailed analytics to communication tools, TopeDeGama has everything you need to take your business to the next level."
       },
       "metrics": {
         "title": "Understand your business in depth",
         "description": "Key metrics to understand your business's health"
       },
       "stats": {
-        "title": "How Repartito works",
+        "title": "How TopeDeGama works",
         "description": "Follow these simple steps to start understanding your customers and boosting your business.",
         "process": [
           {
@@ -379,33 +379,33 @@
       },
       "testimonials": {
         "title": "What our clients say",
-        "description": "Discover how Repartito is helping businesses like yours to grow.",
+        "description": "Discover how TopeDeGama is helping businesses like yours to grow.",
         "clients": [
           {
             "name": "Laura G.",
             "role": "Owner of a local store",
-            "description": "Since I started using Repartito, I understand my customers much better. I have been able to create personalized marketing campaigns that have increased my sales and customer loyalty."
+            "description": "Since I started using TopeDeGama, I understand my customers much better. I have been able to create personalized marketing campaigns that have increased my sales and customer loyalty."
           },
           {
             "name": "Carlos M.",
             "role": "E-commerce Manager",
-            "description": "Repartito has given me the visibility I needed over my business. Now I can make strategic decisions based on real data, not intuition."
+            "description": "TopeDeGama has given me the visibility I needed over my business. Now I can make strategic decisions based on real data, not intuition."
           },
           {
             "name": "Ana R.",
             "role": "Marketing Director",
-            "description": "With Repartito's customer segmentation, I have been able to identify my most valuable customers and create loyalty programs that work. My retention rate has improved a lot!"
+            "description": "With TopeDeGama's customer segmentation, I have been able to identify my most valuable customers and create loyalty programs that work. My retention rate has improved a lot!"
           },
           {
             "name": "Pedro S.",
             "role": "Entrepreneur",
-            "description": "I was surprised how easy it is to use Repartito. In a few minutes I had my dashboards configured and I began to see super valuable information. I recommend it!"
+            "description": "I was surprised how easy it is to use TopeDeGama. In a few minutes I had my dashboards configured and I began to see super valuable information. I recommend it!"
           }
         ]
       },
       "cta": {
         "title": "Ready to get started?",
-        "paragraph": "Start using Repartito today and discover everything you can achieve.",
+        "paragraph": "Start using TopeDeGama today and discover everything you can achieve.",
         "primaryCta": "Get Started",
         "secondaryCta": "Contact Sales"
       },
@@ -414,16 +414,16 @@
         "description": "Have questions? We have answers. If you can't find what you are looking for, please contact us.",
         "items": [
           {
-            "question": "What is Repartito?",
-            "answer": "Repartito is a platform that helps small and medium-sized businesses analyze their business data to make better decisions, with a focus on client retention."
+            "question": "What is TopeDeGama?",
+            "answer": "TopeDeGama is a platform that helps small and medium-sized businesses analyze their business data to make better decisions, with a focus on client retention."
           },
           {
             "question": "How does it work?",
-            "answer": "You connect your sales system (or upload your data) and Repartito automatically processes it to generate key metrics and reports."
+            "answer": "You connect your sales system (or upload your data) and TopeDeGama automatically processes it to generate key metrics and reports."
           },
           {
             "question": "What kind of businesses can use it?",
-            "answer": "No, Repartito is a 100% online platform. You just need an internet connection to access your dashboards."
+            "answer": "No, TopeDeGama is a 100% online platform. You just need an internet connection to access your dashboards."
           },
           {
             "question": "Is it secure?",
@@ -453,19 +453,19 @@
       },
       "cases": {
         "title": "Success Stories",
-        "description": "Discover how Repartito has helped businesses like yours to grow.",
-        "quote": "Data is the new oil. Repartito helps you refine it.",
+        "description": "Discover how TopeDeGama has helped businesses like yours to grow.",
+        "quote": "Data is the new oil. TopeDeGama helps you refine it.",
         "author": "Data Scientist",
-        "authorRole": "at Repartito"
+        "authorRole": "at TopeDeGama"
       }
     },
     "pricing": {
       "meta": {
-        "title": "Pricing - Repartito",
+        "title": "Pricing - TopeDeGama",
         "description": "Find the perfect plan for your business. Start for free."
       },
       "title": "Flexible plans for businesses of all sizes",
-      "paragraph": "Choose the plan that best suits your needs and start growing with Repartito.",
+      "paragraph": "Choose the plan that best suits your needs and start growing with TopeDeGama.",
       "primaryCta": "Get Started",
       "plans": {
         "monthly": "Monthly",
@@ -516,7 +516,7 @@
     },
     "contact": {
       "meta": {
-        "title": "Contact - Repartito",
+        "title": "Contact - TopeDeGama",
         "description": "Get in touch with us. We are here to help you."
       },
       "title": "Get in Touch",
@@ -567,7 +567,7 @@
         "privacy": "Privacy Policy"
       },
       "copy": "All rights reserved.",
-      "companyDescription": "Repartito is the platform that helps you understand your customers and boost your business. In-depth metrics, customer retention, and total control of your company.",
+      "companyDescription": "TopeDeGama is the platform that helps you understand your customers and boost your business. In-depth metrics, customer retention, and total control of your company.",
       "menuCreation": "Digital Menu Creation",
       "mobileFirst": "Mobile-First Design",
       "analytics": "Analytics and Insights",
@@ -575,7 +575,7 @@
       "rights": "All rights reserved"
     },
     "landing": {
-      "title": "Repartito"
+      "title": "TopeDeGama"
     }
   },
   "error": {

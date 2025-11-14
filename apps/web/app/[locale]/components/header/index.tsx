@@ -28,20 +28,20 @@ export const Header = ({ dictionary, locale }: HeaderProps) => {
 
   const navigationItems = [
     {
-      title: dictionary.web.header.features || 'Features',
+      title: 'Inicio',
+      href: `/${locale}#hero`,
+    },
+    {
+      title: 'Nosotros',
       href: `/${locale}#features`,
     },
-    // {
-    //   title: dictionary.web.header.pricing || 'Pricing',
-    //   href: `/${locale}/pricing`,
-    // },
     {
-      title: dictionary.web.header.about || 'About',
-      href: `/${locale}#faq`,
+      title: 'Conocé el Proceso',
+      href: `/${locale}#stats`,
     },
     {
-      title: dictionary.web.header.contact || 'Contact',
-      href: `/${locale}/contact`,
+      title: 'Muro',
+      href: `/${locale}#testimonials`,
     }
   ];
 
@@ -61,10 +61,10 @@ export const Header = ({ dictionary, locale }: HeaderProps) => {
             <div className="relative flex items-center">
               <Image
                 src={logo}
-                alt="LupaPyme"
-                width={180}
-                height={60}
-                className="w-auto h-16"
+                alt="TopeDeGama"
+                width={340}
+                height={340}
+                className="w-56 h-auto md:w-64 lg:w-72"
               />
             </div>
           </Link>
@@ -89,13 +89,13 @@ export const Header = ({ dictionary, locale }: HeaderProps) => {
 
         {/* Right side buttons */}
         <div className="flex items-center gap-2">
-          <ModeToggle />
-          <Button className="bg-[#0d4b3d] hover:bg-[#0d4b3d]/90 text-white font-nunito font-bold px-3 py-1 h-9" asChild>
+          {/* <ModeToggle /> */}
+          {/* <Button className="bg-[#0d4b3d] hover:bg-[#0d4b3d]/90 text-white font-nunito font-bold px-3 py-1 h-9" asChild>
             <Link href={`${env.NEXT_PUBLIC_APP_URL}/${locale}/sign-in`}>
               {dictionary.web.header.getStarted || 'Get Started'}
             </Link>
 
-          </Button>
+          </Button> */}
 
           {/* Mobile menu button */}
           <Button variant="ghost" onClick={() => setOpen(!isOpen)} className="lg:hidden ml-2 px-2">
@@ -121,7 +121,7 @@ export const Header = ({ dictionary, locale }: HeaderProps) => {
               </div>
             ))}
             <div className="px-4">
-              <ModeToggle />
+              {/* <ModeToggle /> */}
               {env.NEXT_PUBLIC_APP_URL && (
                 <Link
                   href={`${env.NEXT_PUBLIC_APP_URL}/${locale}/sign-in`}

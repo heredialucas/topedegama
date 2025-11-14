@@ -44,42 +44,49 @@ export const Testimonials = ({ dictionary }: TestimonialsProps) => {
   // Sample testimonials to use if dictionary doesn't have them
   const sampleTestimonials = [
     {
-      title: "¡Mis ventas han aumentado un 20%!",
-      description: "Desde que uso LupaPyme, entiendo mucho mejor a mis clientes. He podido crear campañas de marketing personalizadas que han aumentado mis ventas y la fidelidad de mis clientes.",
+      title: "¡El servicio fue espectacular!",
+      description: "La barra de tragos fue el alma de la fiesta en Yerba Buena. Los bartenders súper atentos y los cócteles, una bomba. Todo salió puntual y sin estrés. ¡Gracias por hacer que mi cumple sea inolvidable!",
       author: {
-        name: "Ana Pérez",
-        location: "Emprendedora"
+        name: "Florencia",
+        location: "Yerba Buena, Tucumán"
       }
     },
     {
-      title: "Ahora tomo decisiones basadas en datos",
-      description: "LupaPyme me ha dado la visibilidad que necesitaba sobre mi negocio. Ahora puedo tomar decisiones estratégicas basadas en datos reales, no en intuiciones.",
+      title: "Profesionalismo y buena onda",
+      description: "Desde el primer contacto, todo fue fácil y transparente. Me ayudaron a elegir la carta ideal para mi casamiento en Tafí Viejo y se encargaron de cada detalle. ¡Los invitados quedaron fascinados!",
       author: {
-        name: "Juan López",
-        location: "Dueño de Pyme"
+        name: "Martín",
+        location: "Tafí Viejo, Tucumán"
       }
     },
     {
-      title: "La mejor herramienta para retener clientes",
-      description: "Con la segmentación de clientes de LupaPyme, he podido identificar a mis clientes más valiosos y crear programas de fidelización que funcionan. ¡Mi tasa de retención ha mejorado muchísimo!",
+      title: "¡Recomiendo a todos!",
+      description: "Contraté el catering de bebidas para una fiesta empresarial en San Miguel y fue un éxito. Tragos riquísimos, opciones sin alcohol y cristalería impecable. Volvería a elegirlos sin dudar.",
       author: {
-        name: "Sofía Gómez",
-        location: "Gerente de Marketing"
+        name: "Lucía",
+        location: "San Miguel de Tucumán"
       }
     },
     {
-      title: "Fácil de usar y muy potente",
-      description: "Me sorprendió lo fácil que es de usar LupaPyme. En pocos minutos ya tenía mis dashboards configurados y empecé a ver información súper valiosa. ¡La recomiendo!",
+      title: "Atención personalizada y calidad",
+      description: "Me encantó la flexibilidad para adaptar el servicio a lo que necesitábamos en Concepción. Todo el equipo súper amable y profesional. ¡La barra fue el punto de encuentro de la noche!",
       author: {
-        name: "Carlos Fernández",
-        location: "Consultor de Negocios"
+        name: "Federico",
+        location: "Concepción, Tucumán"
       }
     }
   ];
 
   // Get testimonials from dictionary if available, otherwise use samples
   const testimonials: Testimonial[] = Array.isArray(dictionary.web.home.testimonials?.items) && dictionary.web.home.testimonials.items.length > 0
-    ? (dictionary.web.home.testimonials.items as Testimonial[])
+    ? dictionary.web.home.testimonials.items.map(item => ({
+      title: item.description?.slice(0, 40) + '...' || '', // Use first part of description as title (or customize)
+      description: item.description || '',
+      author: {
+        name: item.name || '',
+        location: item.role || '',
+      }
+    }))
     : sampleTestimonials;
 
   useEffect(() => {
@@ -107,7 +114,6 @@ export const Testimonials = ({ dictionary }: TestimonialsProps) => {
       viewport={{ once: true }}
       variants={staggerContainer}
       className="w-full py-20 lg:py-40 relative bg-green-50/50 dark:bg-green-900/10"
-      id="business"
     >
       {/* Decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -118,12 +124,12 @@ export const Testimonials = ({ dictionary }: TestimonialsProps) => {
 
       <div className="container mx-auto px-4">
         <motion.div variants={fadeIn} className="flex flex-col gap-6 mb-12">
-          <h2 className="text-center font-bold text-3xl md:text-4xl text-gray-800 dark:text-white var(--font-nunito)">
+          <h2 id="testimonials" className="text-center font-bold text-3xl md:text-4xl text-gray-800 dark:text-white var(--font-nunito)">
             {dictionary.web.home.testimonials?.title || "Lo que dicen nuestros usuarios"}
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-green-400 to-green-600 rounded-full mx-auto mb-2"></div>
           <p className="text-muted-foreground text-center max-w-2xl mx-auto text-lg var(--font-nunito)">
-            {dictionary.web.home.testimonials?.description || "Descubre cómo LupaPyme está ayudando a negocios como el tuyo a crecer."}
+            {dictionary.web.home.testimonials?.description || "Descubre cómo TopeDeGama está ayudando a negocios como el tuyo a crecer."}
           </p>
         </motion.div>
 

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { staggerContainer, fadeIn } from '../lib/animations';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import logoWithBg from '@/public/logoWithBg.png';
+import logoWithBg from '@/public/logo.png';
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
@@ -25,20 +25,20 @@ type StatsProps = {
 export const Stats = ({ dictionary }: StatsProps) => {
   const steps = [
     {
-      title: dictionary.web.home.stats.process?.[0]?.title || "Conecta tus datos",
-      description: dictionary.web.home.stats.process?.[0]?.description || "Conecta tu sistema de ventas o sube tus datos de forma segura."
+      title: dictionary.web.home.stats.process?.[0]?.title || "Solicita tu Presupuesto",
+      description: dictionary.web.home.stats.process?.[0]?.description || "Completa nuestro formulario online con los detalles de tu evento y recibe tu cotización por WhatsApp."
     },
     {
-      title: dictionary.web.home.stats.process?.[1]?.title || "Analiza tus métricas",
-      description: dictionary.web.home.stats.process?.[1]?.description || "Visualiza tus KPIs más importantes en un dashboard intuitivo."
+      title: dictionary.web.home.stats.process?.[1]?.title || "Personalizamos tu Servicio",
+      description: dictionary.web.home.stats.process?.[1]?.description || "Coordinamos contigo la carta de tragos, bebidas sin alcohol y todos los detalles para tu evento."
     },
     {
-      title: dictionary.web.home.stats.process?.[2]?.title || "Segmenta tus clientes",
-      description: dictionary.web.home.stats.process?.[2]?.description || "Clasifica a tus clientes y entiende su comportamiento de compra."
+      title: dictionary.web.home.stats.process?.[2]?.title || "Preparamos Todo",
+      description: dictionary.web.home.stats.process?.[2]?.description || "Nuestro equipo se encarga de conseguir insumos premium, cristalería y equipamiento necesario."
     },
     {
-      title: dictionary.web.home.stats.process?.[3]?.title || "Toma acción",
-      description: dictionary.web.home.stats.process?.[3]?.description || "Usa la información para crear campañas de marketing y fidelización."
+      title: dictionary.web.home.stats.process?.[3]?.title || "Disfrutá tu Evento",
+      description: dictionary.web.home.stats.process?.[3]?.description || "Llegamos puntuales, montamos la barra y brindamos un servicio profesional durante todo tu evento."
     }
   ];
 
@@ -49,7 +49,7 @@ export const Stats = ({ dictionary }: StatsProps) => {
       viewport={{ once: true }}
       variants={staggerContainer}
       className="container mx-auto px-4 py-16 relative"
-      id="app"
+      id="stats"
     >
       {/* Decorative elements */}
       <div className="absolute right-0 bottom-0 w-64 h-64 bg-[#0d4b3d]/10 dark:bg-[#0d4b3d]/5 rounded-full blur-3xl"></div>
@@ -61,11 +61,11 @@ export const Stats = ({ dictionary }: StatsProps) => {
         className="text-center mb-16"
       >
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 var(--font-nunito)">
-          {dictionary.web.home.stats.title || "Cómo funciona LupaPyme"}
+          {dictionary.web.home.stats.title || "Nuestro Proceso de Trabajo"}
         </h2>
         <div className="w-20 h-1 bg-gradient-to-r from-[#0d4b3d]/70 to-[#0d4b3d] rounded-full mx-auto mb-6"></div>
         <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto var(--font-nunito)">
-          {dictionary.web.home.stats.description || "Sigue estos sencillos pasos para empezar a entender a tus clientes y potenciar tu negocio."}
+          {dictionary.web.home.stats.description || "Desde tu cotización hasta el brindis final, nos encargamos de cada detalle para que tu evento sea inolvidable."}
         </p>
       </motion.div>
 
@@ -117,7 +117,7 @@ export const Stats = ({ dictionary }: StatsProps) => {
         >
           <Image
             src={logoWithBg}
-            alt="LupaPyme App"
+            alt="TopeDeGama App"
             width={600}
             height={400}
             className="rounded-lg shadow-xl"

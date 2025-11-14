@@ -1,20 +1,12 @@
 'use client';
 
 import type { Dictionary } from '@repo/internationalization';
-import Link from 'next/link';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
-import { BarChart3, Users, Smartphone } from 'lucide-react';
-import { useParams } from 'next/navigation';
-import { env } from '@/env';
-import logo from '@/public/logo.png';
-import { staggerContainer, fadeIn, slideIn } from '../lib/animations';
-import pedidosPorDia from '@/public/pedidos-por-dia.png';
-import piePorCategorias from '@/public/pie-por-categorias.png';
-import tablaIngresos from '@/public/tabla-ingresos.png';
-
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+import Image from 'next/image';
+import { staggerContainer, fadeIn } from '../lib/animations';
+import { CateringWizard } from './catering-wizard';
+import barra1 from '@/public/barra5.jpeg';
+import barra4 from '@/public/barra3.jpeg';
 
 type HeroProps = {
   dictionary: Dictionary & {
@@ -22,20 +14,8 @@ type HeroProps = {
       home: {
         hero: {
           heading?: string;
-        };
-        features: {
-          featureOne?: {
-            title?: string;
-            paragraph?: string;
-          };
-          featureTwo?: {
-            title?: string;
-            paragraph?: string;
-          };
-          featureThree?: {
-            title?: string;
-            paragraph?: string;
-          };
+          paragraph?: string;
+          subtitle?: string;
         };
       };
     };
@@ -43,97 +23,76 @@ type HeroProps = {
 };
 
 export const Hero = ({ dictionary }: HeroProps) => {
-  const params = useParams();
-  const locale = params.locale as string;
-
   return (
-    <motion.section
-      initial="initial"
-      animate="animate"
-      variants={staggerContainer}
-      className="min-h-[calc(100vh-4rem)] flex items-center relative px-4 overflow-hidden"
-      id="inicio"
-    >
+    <div className="relative w-full bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800" id="inicio">
+      <motion.div
+        initial="initial"
+        animate="animate"
+        variants={staggerContainer}
+        className="relative pt-24 md:pt-28 lg:pt-32 pb-8 md:pb-12 lg:pb-20"
+      >
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
+            {/* Left side - Form */}
+            <div className="max-w-2xl mx-auto lg:mx-0">
+              <motion.div variants={fadeIn} className="text-center lg:text-left mb-4 md:mb-6">
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white mb-3 md:mb-4 var(--font-nunito)">
+                  {dictionary.web.home.hero.heading || "Tu Evento Merece el Mejor Catering de Bebidas"}
+                </h1>
+                <p className="text-sm md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-2 md:mb-3 var(--font-nunito)">
+                  {dictionary.web.home.hero.paragraph || "🎉 Cotizá en minutos | 🍸 Tragos premium | 🥂 Servicio profesional"}
+                </p>
+                <p className="text-xs md:text-sm lg:text-base text-gray-500 dark:text-gray-400 var(--font-nunito)">
+                  {dictionary.web.home.hero.subtitle || "Completá el formulario y recibí tu presupuesto personalizado por WhatsApp al instante"}
+                </p>
+              </motion.div>
 
-      {/* Decorative elements */}
-      <div className="absolute -top-10 right-1/4 w-20 h-20 bg-[#0d4b3d]/20 dark:bg-[#0d4b3d]/10 rounded-full blur-xl"></div>
-      <div className="absolute bottom-10 left-1/3 w-32 h-32 bg-[#0d4b3d]/10 dark:bg-[#0d4b3d]/5 rounded-full blur-2xl"></div>
+              <CateringWizard />
+            </div>
 
-      <div className="container mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <motion.div variants={slideIn} className="pt-8 md:pt-0 text-center md:text-left">
-            <motion.h1
-              className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6"
-              variants={fadeIn}
+            {/* Right side - Images */}
+            <motion.div
+              className="flex justify-center items-center mt-8 lg:mt-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, delay: 0.2 }
+              }}
             >
-              {dictionary.web.home.hero.heading || "Understand your clients, grow your business"}
-            </motion.h1>
-            <motion.p className="text-gray-600 dark:text-gray-300 text-lg mb-8" variants={fadeIn}>
-              {dictionary.web.home.hero.paragraph || "LupaPyme gives you the necessary tools to analyze your business metrics, understand your clients' behavior and make strategic decisions to increase retention and sales."}
-            </motion.p>
-            <div className="flex justify-center md:justify-start gap-4">
-              <Link href={`${env.NEXT_PUBLIC_APP_URL}/${locale}/sign-up`}>
-                <motion.button
-                  className="bg-[#0d4b3d] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#0d4b3d]/90 transition-all shadow-lg"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+              <div className="relative w-full max-w-md lg:max-w-2xl h-[300px] md:h-[400px] lg:h-[550px]">
+                <motion.div
+                  initial={{ opacity: 0, x: -50, rotate: -25 }}
+                  animate={{ opacity: 1, x: 0, rotate: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                  className="absolute top-2 left-2 md:top-5 md:left-5 w-48 md:w-64 lg:w-80 h-auto bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-3 md:p-4 flex flex-col justify-center items-center transform -rotate-12 z-10"
                 >
-                  {dictionary.web.home.hero.primaryCta || "Get started now"}
-                </motion.button>
-              </Link>
-              <Link href="#features">
-                <motion.button
-                  className="border-2 border-[#0d4b3d] text-[#0d4b3d] px-8 py-3 rounded-lg font-medium hover:bg-[#0d4b3d] hover:text-white transition-all shadow-lg"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  <Image
+                    src={barra1}
+                    alt="Barra profesional de tragos"
+                    className="w-full h-auto object-contain mb-2 rounded-md"
+                  />
+                  <h3 className="text-sm md:text-base lg:text-lg font-bold text-center text-gray-800 dark:text-white">Barra Profesional</h3>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+                  className="absolute top-5 right-2 md:top-10 md:right-5 w-48 md:w-64 lg:w-80 h-auto bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-3 md:p-4 flex flex-col justify-center items-center transform rotate-12 z-10"
                 >
-                  {dictionary.web.home.hero.secondaryCta || "Learn more"}
-                </motion.button>
-              </Link>
-            </div>
-          </motion.div>
-          <motion.div
-            className="hidden md:flex justify-center items-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.6, delay: 0.2 }
-            }}
-          >
-            <div className="relative w-full max-w-2xl h-[550px]">
-              <motion.div
-                initial={{ opacity: 0, x: -50, rotate: -15 }}
-                animate={{ opacity: 1, x: 0, rotate: 0 }}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="absolute top-5 left-5 w-80 h-auto bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-4 flex flex-col justify-center items-center transform -rotate-12 z-10"
-              >
-                <Image src={pedidosPorDia} alt={dictionary.web.home.features.featureOne?.title || "Advanced Analytics"} className="w-full h-auto object-contain mb-2 rounded-md" />
-                <h3 className="text-lg font-bold text-center text-gray-800 dark:text-white">{dictionary.web.home.features.featureOne?.title || "Advanced Analytics"}</h3>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 50, rotate: 15 }}
-                animate={{ opacity: 1, x: 0, rotate: 0 }}
-                transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                className="absolute bottom-5 left-20 w-96 h-auto bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-4 flex flex-col justify-center items-center transform rotate-6 z-20"
-              >
-                <Image src={piePorCategorias} alt={dictionary.web.home.features.featureTwo?.title || "Client Segmentation"} className="w-full h-auto object-contain mb-2 rounded-md" />
-                <h3 className="text-lg font-bold text-center text-gray-800 dark:text-white">{dictionary.web.home.features.featureTwo?.title || "Client Segmentation"}</h3>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-                className="absolute top-10 right-5 w-80 h-auto bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-4 flex flex-col justify-center items-center transform rotate-12 z-10"
-              >
-                <Image src={tablaIngresos} alt={dictionary.web.home.features.featureThree?.title || "Direct Communication"} className="w-full h-auto object-contain mb-2 rounded-md" />
-                <h3 className="text-lg font-bold text-center text-gray-800 dark:text-white">{dictionary.web.home.features.featureThree?.title || "Direct Communication"}</h3>
-              </motion.div>
-            </div>
-          </motion.div>
+                  <Image
+                    src={barra4}
+                    alt="Servicio premium de catering"
+                    className="w-full h-auto object-contain mb-2 rounded-md"
+                  />
+                  <h3 className="text-sm md:text-base lg:text-lg font-bold text-center text-gray-800 dark:text-white">Servicio Premium</h3>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </div>
   );
 };
-

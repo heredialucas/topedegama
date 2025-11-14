@@ -69,7 +69,7 @@ export const Cases = ({ dictionary, projects }: CasesProps) => {
       <motion.div variants={fadeIn} className="text-center mb-16 relative">
         {/* Frase flotante */}
         <span className="absolute -top-8 left-4 md:left-20 text-sm md:text-lg text-white/70 font-normal italic -rotate-12 origin-left">
-          &quot;{dictionary.web.home.cases.quote || 'Data is the new oil. LupaPyme helps you refine it.'}&quot;
+          &quot;{dictionary.web.home.cases.quote || 'Data is the new oil. TopeDeGama helps you refine it.'}&quot;
         </span>
 
         {/* Título centrado */}

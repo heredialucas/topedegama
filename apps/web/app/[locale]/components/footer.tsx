@@ -37,7 +37,6 @@ export const Footer = ({ dictionary }: FooterProps) => {
     navigation: dictionary?.web.footer?.product.title || "Navegación",
     home: dictionary?.web.header?.home || "Inicio",
     features: dictionary?.web.footer?.product.features || "Características",
-    pricing: dictionary?.web.footer?.product.pricing || "Precios",
     about: dictionary?.web.footer?.product.about || "Acerca de",
     contact: dictionary?.web.footer?.product.contact || "Contacto"
   };
@@ -74,7 +73,7 @@ export const Footer = ({ dictionary }: FooterProps) => {
               <div className="relative flex items-center">
                 <Image
                   src={logo}
-                  alt="LupaPyme"
+                  alt="TopeDeGama"
                   width={180}
                   height={60}
                   className="h-14 w-auto"
@@ -83,32 +82,16 @@ export const Footer = ({ dictionary }: FooterProps) => {
             </motion.div>
 
             <p className="leading-relaxed max-w-sm text-gray-600 dark:text-gray-300">
-              {dictionary?.web.footer?.companyDescription || "LupaPyme is the platform that helps you understand your customers and boost your business. In-depth metrics, customer retention, and total control of your company."}
+              Catering de bebidas premium para eventos en Tucumán. Tragos de autor, servicio profesional y atención personalizada para que tu fiesta sea inolvidable.
             </p>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-[#0d4b3d] dark:text-gray-400 dark:hover:text-[#0d4b3d]/90 transition-colors"
-              >
-                <Facebook />
-              </a>
-              <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/barras.tdg/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-[#0d4b3d] dark:text-gray-400 dark:hover:text-[#0d4b3d]/90 transition-colors"
               >
                 <Instagram />
-              </a>
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-[#0d4b3d] dark:text-gray-400 dark:hover:text-[#0d4b3d]/90 transition-colors"
-              >
-                <Linkedin />
               </a>
             </div>
           </div>
@@ -121,7 +104,7 @@ export const Footer = ({ dictionary }: FooterProps) => {
             <ul className="space-y-3 text-center md:text-left">
               <li>
                 <Link
-                  href={`/${locale}`}
+                  href={`/${locale}#hero`}
                   className="text-gray-600 dark:text-gray-300 hover:text-[#0d4b3d] dark:hover:text-[#0d4b3d]/90 transition-colors"
                 >
                   {navLabels.home}
@@ -137,15 +120,7 @@ export const Footer = ({ dictionary }: FooterProps) => {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/pricing`}
-                  className="text-gray-600 dark:text-gray-300 hover:text-[#0d4b3d] dark:hover:text-[#0d4b3d]/90 transition-colors"
-                >
-                  {navLabels.pricing}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}#faq`}
+                  href={`/${locale}#stats`}
                   className="text-gray-600 dark:text-gray-300 hover:text-[#0d4b3d] dark:hover:text-[#0d4b3d]/90 transition-colors"
                 >
                   {navLabels.about}
@@ -153,7 +128,7 @@ export const Footer = ({ dictionary }: FooterProps) => {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}#hero`}
                   className="text-gray-600 dark:text-gray-300 hover:text-[#0d4b3d] dark:hover:text-[#0d4b3d]/90 transition-colors"
                 >
                   {navLabels.contact}
@@ -165,20 +140,20 @@ export const Footer = ({ dictionary }: FooterProps) => {
           {/* Features */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start">
             <h3 className="font-semibold mb-4 text-center md:text-left text-gray-800 dark:text-white">
-              {featureLabels.features}
+              Nuestro Servicio
             </h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 justify-center md:justify-start text-gray-600 dark:text-gray-300">
                 <ShoppingBag className="w-4 h-4 text-[#0d4b3d]" />
-                <span>{dictionary?.web.footer?.menuCreation || "Creación de Menús Digitales"}</span>
+                <span>Tragos premium y clásicos</span>
               </li>
               <li className="flex items-center gap-3 justify-center md:justify-start text-gray-600 dark:text-gray-300">
                 <Shield className="w-4 h-4 text-[#0d4b3d]" />
-                <span>{dictionary?.web.footer?.mobileFirst || "Diseño Mobile-First"}</span>
+                <span>Atención personalizada</span>
               </li>
               <li className="flex items-center gap-3 justify-center md:justify-start text-gray-600 dark:text-gray-300">
                 <CheckCircle className="w-4 h-4 text-[#0d4b3d]" />
-                <span>{dictionary?.web.footer?.analytics || "Análisis e Insights"}</span>
+                <span>Servicio profesional y puntual</span>
               </li>
             </ul>
           </div>
@@ -186,34 +161,17 @@ export const Footer = ({ dictionary }: FooterProps) => {
           {/* Contact */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start">
             <h3 className="font-semibold mb-4 text-center md:text-left text-gray-800 dark:text-white">
-              {contactLabels.contact}
+              Contacto y Reservas
             </h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 justify-center md:justify-start">
-                <Mail className="w-4 h-4 text-[#0d4b3d]" />
-                <a
-                  href="mailto:info@lupapyme.com"
-                  className="text-gray-600 dark:text-gray-300 hover:text-[#0d4b3d] dark:hover:text-[#0d4b3d]/90 transition-colors"
-                >
-                  info@lupapyme.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3 justify-center md:justify-start">
                 <Phone className="w-4 h-4 text-[#0d4b3d]" />
                 <a
-                  href="tel:+34900123456"
+                  href="tel:+5493814689739"
                   className="text-gray-600 dark:text-gray-300 hover:text-[#0d4b3d] dark:hover:text-[#0d4b3d]/90 transition-colors"
                 >
-                  +34 900 123 456
+                  +54 9 3814 68-9739
                 </a>
-              </li>
-              <li className="mt-4">
-                <Link
-                  href={`/${locale}/sign-in`}
-                  className="bg-[#0d4b3d] hover:bg-[#0d4b3d]/90 text-white px-4 py-2 rounded-lg transition-colors inline-block"
-                >
-                  {dictionary?.web.footer?.getStarted || "Comenzar"}
-                </Link>
               </li>
             </ul>
           </div>
@@ -225,8 +183,8 @@ export const Footer = ({ dictionary }: FooterProps) => {
 
         {/* Copyright and Legal */}
         <div className="border-t border-[#0d4b3d]/10 py-8 text-center md:flex md:justify-between text-sm text-gray-500 dark:text-gray-400">
-          <div>© {new Date().getFullYear()} LupaPyme. {dictionary?.web.footer?.rights || "Todos los derechos reservados"}</div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-4 mt-4 md:mt-0">
+          <div>© {new Date().getFullYear()} Tope De Gama. {dictionary?.web.footer?.rights || "Todos los derechos reservados"}</div>
+          {/* <div className="flex flex-wrap justify-center md:justify-end gap-4 mt-4 md:mt-0">
             <Link
               href={`/${locale}/privacy`}
               className="hover:text-[#0d4b3d] dark:hover:text-[#0d4b3d]/90 transition-colors"
@@ -239,7 +197,7 @@ export const Footer = ({ dictionary }: FooterProps) => {
             >
               {dictionary?.web.footer?.legal.terms || "Términos y Condiciones"}
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

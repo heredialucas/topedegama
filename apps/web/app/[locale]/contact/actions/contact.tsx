@@ -81,7 +81,7 @@ export async function contactForm(
   try {
     // const resend = new Resend(env.RESEND_API_KEY);
     // await resend.emails.send({
-    //   from: 'LupaPyme Contact <onboarding@resend.dev>',
+    //   from: 'TopeDeGama Contact <onboarding@resend.dev>',
     //   to: env.ADMIN_EMAIL,
     //   subject: `New message from ${name}`,
     //   reply_to: email,

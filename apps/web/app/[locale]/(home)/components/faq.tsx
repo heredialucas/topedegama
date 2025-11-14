@@ -40,11 +40,11 @@ type FAQProps = {
 // Sample FAQ items to use if dictionary doesn't have them
 const sampleFaqItems = [
   {
-    question: "¿Qué es LupaPyme?",
-    answer: "LupaPyme es una plataforma que ayuda a las pymes a analizar sus datos de negocio para tomar mejores decisiones y potenciar su crecimiento."
+    question: "¿Qué es TopeDeGama?",
+    answer: "TopeDeGama es una plataforma que ayuda a las pymes a analizar sus datos de negocio para tomar mejores decisiones y potenciar su crecimiento."
   },
   {
-    question: "¿Qué tipo de negocios pueden usar LupaPyme?",
+    question: "¿Qué tipo de negocios pueden usar TopeDeGama?",
     answer: "Cualquier pyme que quiera tomar decisiones basadas en datos. Desde tiendas de retail, restaurantes, hasta negocios de servicios."
   },
   {
@@ -56,12 +56,12 @@ const sampleFaqItems = [
     answer: "Sí, la seguridad de tus datos es nuestra máxima prioridad. Usamos encriptación y los más altos estándares de seguridad."
   },
   {
-    question: "¿Cuánto cuesta usar LupaPyme?",
+    question: "¿Cuánto cuesta usar TopeDeGama?",
     answer: "Tenemos planes para todo tipo de negocios, incluyendo un plan gratuito para empezar. Puedes ver todos los detalles en nuestra página de precios."
   },
   {
     question: "¿Necesito instalar algo?",
-    answer: "No, LupaPyme es una plataforma 100% online. Solo necesitas una conexión a internet para acceder a tus dashboards."
+    answer: "No, TopeDeGama es una plataforma 100% online. Solo necesitas una conexión a internet para acceder a tus dashboards."
   }
 ];
 
@@ -73,7 +73,7 @@ type FaqItem = {
 export const FAQ = ({ dictionary, locale }: FAQProps) => {
   // Create WhatsApp message
   const getWhatsAppMessage = () => {
-    return "¡Hola! Tengo preguntas sobre LupaPyme. Me interesa saber más sobre cómo funciona y cómo puede ayudar a mi negocio.";
+    return "¡Hola! Tengo preguntas sobre TopeDeGama. Me interesa saber más sobre cómo funciona y cómo puede ayudar a mi negocio.";
   };
 
   // Get FAQ items from dictionary if available, otherwise use samples
@@ -99,7 +99,7 @@ export const FAQ = ({ dictionary, locale }: FAQProps) => {
           <div className="w-20 h-1 bg-gradient-to-r from-[#0d4b3d]/70 to-[#0d4b3d] rounded-full mx-auto mb-4"></div>
           <p className="text-base text-gray-600 dark:text-gray-300">
             {dictionary.web.home.faq?.description ||
-              'Respuestas a las dudas más comunes sobre LupaPyme y cómo puede ayudar a tu negocio.'}
+              'Respuestas a las dudas más comunes sobre TopeDeGama y cómo puede ayudar a tu negocio.'}
           </p>
         </motion.div>
 
@@ -119,7 +119,7 @@ export const FAQ = ({ dictionary, locale }: FAQProps) => {
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-center lg:text-left mb-4">
               {dictionary.web.home.faq?.contact?.description ||
-                'Contáctanos si tienes dudas sobre cómo usar LupaPyme o quieres saber más sobre cómo potenciar tu negocio.'}
+                'Contáctanos si tienes dudas sobre cómo usar TopeDeGama o quieres saber más sobre cómo potenciar tu negocio.'}
             </p>
             <Button
               className="gap-2 bg-[#0d4b3d] hover:bg-[#0d4b3d]/80 text-white shadow-md"

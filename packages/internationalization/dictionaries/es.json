@@ -1,7 +1,7 @@
 {
   "app": {
     "admin": {
-      "title": "Repartito - Panel de Administración",
+      "title": "TopeDeGama - Panel de Administración",
       "navigation": {
         "dashboard": "Dashboard",
         "analytics": "Analíticas",
@@ -442,8 +442,8 @@
         }
       },
       "layout": {
-        "title": "Panel de Administración Repartito",
-        "description": "Accede a las herramientas administrativas de Repartito para gestionar tu negocio de manera eficiente."
+        "title": "Panel de Administración TopeDeGama",
+        "description": "Accede a las herramientas administrativas de TopeDeGama para gestionar tu negocio de manera eficiente."
       }
     },
     "client": {
@@ -701,27 +701,60 @@
     "home": {
       "meta": {
         "title": {
-          "template": "%s - Repartito",
-          "default": "Repartito - Métricas de Negocio para Retención de Clientes"
+          "template": "%s - TopeDeGama",
+          "default": "TopeDeGama - Métricas de Negocio para Retención de Clientes"
         },
-        "description": "Repartito te da las herramientas necesarias para analizar las métricas de tu negocio, entender el comportamiento de tus clientes y tomar decisiones estratégicas para aumentar la retención y las ventas."
+        "description": "TopeDeGama te da las herramientas necesarias para analizar las métricas de tu negocio, entender el comportamiento de tus clientes y tomar decisiones estratégicas para aumentar la retención y las ventas."
       },
       "hero": {
-        "title": "La plataforma que impulsa tu negocio",
-        "paragraph": "Repartito te da las herramientas necesarias para analizar las métricas de tu negocio, entender el comportamiento de tus clientes y tomar decisiones estratégicas para aumentar la retención y las ventas.",
-        "primaryCta": "Comienza ahora",
-        "secondaryCta": "Contactar a ventas"
+        "heading": "Tu Evento Merece el Mejor Catering de Bebidas",
+        "paragraph": "🎉 Cotizá en minutos | 🍸 Tragos premium | 🥂 Servicio profesional",
+        "subtitle": "Completá el formulario y recibí tu presupuesto personalizado por WhatsApp al instante",
+        "title": "Tu Evento Merece el Mejor Catering de Bebidas",
+        "primaryCta": "Solicitar Presupuesto",
+        "secondaryCta": "Contactar por WhatsApp"
       },
       "features": {
-        "title": "¿Por qué elegir Repartito?",
-        "paragraph": "Desde analíticas detalladas hasta herramientas de comunicación, Repartito tiene todo lo que necesitas para llevar tu negocio al siguiente nivel."
+        "title": "¿Por Qué Elegirnos?",
+        "paragraph": "Hacemos de tu evento una experiencia única con el mejor servicio de catering de bebidas",
+        "featureOne": {
+          "title": "Tragos Premium",
+          "paragraph": "Variedad de tragos de autor y clásicos preparados por bartenders profesionales con ingredientes de primera calidad."
+        },
+        "featureTwo": {
+          "title": "Servicio Personalizado",
+          "paragraph": "Atención exclusiva y adaptada a tu evento. Nos encargamos de todo para que disfrutes sin preocupaciones."
+        },
+        "featureThree": {
+          "title": "Servicio Puntual",
+          "paragraph": "Llegamos a tiempo, montamos la barra y garantizamos un servicio impecable durante todo tu evento."
+        }
       },
       "metrics": {
         "title": "Entiende tu negocio a fondo",
         "description": "Métricas clave para entender la salud de tu negocio"
       },
       "stats": {
-        "title": "Cómo funciona Repartito",
+        "title": "Nuestro Proceso de Trabajo",
+        "description": "Desde tu cotización hasta el brindis final, nos encargamos de cada detalle para que tu evento sea inolvidable.",
+        "process": [
+          {
+            "title": "Solicita tu Presupuesto",
+            "description": "Completa nuestro formulario online con los detalles de tu evento y recibe tu cotización por WhatsApp."
+          },
+          {
+            "title": "Personalizamos tu Servicio",
+            "description": "Coordinamos contigo la carta de tragos, bebidas sin alcohol y todos los detalles para tu evento."
+          },
+          {
+            "title": "Preparamos Todo",
+            "description": "Nuestro equipo se encarga de conseguir insumos premium, cristalería y equipamiento necesario."
+          },
+          {
+            "title": "Disfrutá tu Evento",
+            "description": "Llegamos puntuales, montamos la barra y brindamos un servicio profesional durante todo tu evento."
+          }
+        ],
         "one": {
           "title": "Conecta tus datos",
           "description": "Importa tus ventas desde un Excel o conéctate directamente a tu sistema de punto de venta."
@@ -737,33 +770,33 @@
       },
       "testimonials": {
         "title": "Lo que dicen nuestros clientes",
-        "description": "Descubre cómo Repartito está ayudando a negocios como el tuyo a crecer.",
-        "clients": [
+        "description": "Testimonios reales de eventos en Tucumán. Servicio profesional, buena onda y calidad en cada detalle.",
+        "items": [
           {
-            "name": "Laura G.",
-            "role": "Dueña de tienda local",
-            "description": "Desde que uso Repartito, entiendo mucho mejor a mis clientes. He podido crear campañas de marketing personalizadas que han aumentado mis ventas y la fidelidad de mis clientes."
+            "name": "Florencia",
+            "role": "Yerba Buena, Tucumán",
+            "description": "La barra de tragos fue el alma de la fiesta en Yerba Buena. Los bartenders súper atentos y los cócteles, una bomba. Todo salió puntual y sin estrés. ¡Gracias por hacer que mi cumple sea inolvidable!"
           },
           {
-            "name": "Carlos M.",
-            "role": "Gerente de E-commerce",
-            "description": "Repartito me ha dado la visibilidad que necesitaba sobre mi negocio. Ahora puedo tomar decisiones estratégicas basadas en datos reales, no en intuiciones."
+            "name": "Martín",
+            "role": "Tafí Viejo, Tucumán",
+            "description": "Desde el primer contacto, todo fue fácil y transparente. Me ayudaron a elegir la carta ideal para mi casamiento en Tafí Viejo y se encargaron de cada detalle. ¡Los invitados quedaron fascinados!"
           },
           {
-            "name": "Ana R.",
-            "role": "Directora de Marketing",
-            "description": "Con la segmentación de clientes de Repartito, he podido identificar a mis clientes más valiosos y crear programas de fidelización que funcionan. ¡Mi tasa de retención ha mejorado muchísimo!"
+            "name": "Lucía",
+            "role": "San Miguel de Tucumán",
+            "description": "Contraté el catering de bebidas para una fiesta empresarial en San Miguel y fue un éxito. Tragos riquísimos, opciones sin alcohol y cristalería impecable. Volvería a elegirlos sin dudar."
           },
           {
-            "name": "Pedro S.",
-            "role": "Emprendedor",
-            "description": "Me sorprendió lo fácil que es de usar Repartito. En pocos minutos ya tenía mis dashboards configurados y empecé a ver información súper valiosa. ¡La recomiendo!"
+            "name": "Federico",
+            "role": "Concepción, Tucumán",
+            "description": "Me encantó la flexibilidad para adaptar el servicio a lo que necesitábamos en Concepción. Todo el equipo súper amable y profesional. ¡La barra fue el punto de encuentro de la noche!"
           }
         ]
       },
       "cta": {
         "title": "¿Listo para empezar?",
-        "paragraph": "Empieza a usar Repartito hoy mismo y descubre todo lo que puedes lograr.",
+        "paragraph": "Empieza a usar TopeDeGama hoy mismo y descubre todo lo que puedes lograr.",
         "primaryCta": "Comienza ahora",
         "secondaryCta": "Contactar a ventas"
       },
@@ -771,12 +804,12 @@
         "title": "Preguntas Frecuentes",
         "items": [
           {
-            "question": "¿Qué es Repartito?",
-            "answer": "Repartito es una plataforma que ayuda a pequeñas y medianas empresas a analizar sus datos de negocio para tomar mejores decisiones, con foco en la retención de clientes."
+            "question": "¿Qué es TopeDeGama?",
+            "answer": "TopeDeGama es una plataforma que ayuda a pequeñas y medianas empresas a analizar sus datos de negocio para tomar mejores decisiones, con foco en la retención de clientes."
           },
           {
             "question": "¿Cómo funciona?",
-            "answer": "Conectas tu sistema de ventas (o subes tus datos) y Repartito los procesa automáticamente para generar métricas e informes clave."
+            "answer": "Conectas tu sistema de ventas (o subes tus datos) y TopeDeGama los procesa automáticamente para generar métricas e informes clave."
           },
           {
             "question": "¿Qué tipo de negocios pueden usarlo?",
@@ -784,25 +817,25 @@
           },
           {
             "question": "¿Necesito instalar algo?",
-            "answer": "No, Repartito es una plataforma 100% online. Solo necesitas una conexión a internet para acceder a tus dashboards."
+            "answer": "No, TopeDeGama es una plataforma 100% online. Solo necesitas una conexión a internet para acceder a tus dashboards."
           }
         ]
       },
       "cases": {
         "title": "Casos de Éxito",
-        "description": "Descubre cómo Repartito ha ayudado a negocios como el tuyo a crecer.",
-        "quote": "Los datos son el nuevo petróleo. Repartito te ayuda a refinarlo.",
+        "description": "Descubre cómo TopeDeGama ha ayudado a negocios como el tuyo a crecer.",
+        "quote": "Los datos son el nuevo petróleo. TopeDeGama te ayuda a refinarlo.",
         "author": "Científico de Datos",
-        "authorRole": "en Repartito"
+        "authorRole": "en TopeDeGama"
       }
     },
     "pricing": {
       "meta": {
-        "title": "Precios - Repartito",
+        "title": "Precios - TopeDeGama",
         "description": "Encuentra el plan perfecto para tu negocio. Comienza gratis."
       },
       "title": "Planes flexibles para negocios de todos los tamaños",
-      "paragraph": "Elige el plan que mejor se adapte a tus necesidades y empieza a crecer con Repartito.",
+      "paragraph": "Elige el plan que mejor se adapte a tus necesidades y empieza a crecer con TopeDeGama.",
       "primaryCta": "Comienza ahora",
       "plans": {
         "monthly": "Mensual",
@@ -853,7 +886,7 @@
     },
     "contact": {
       "meta": {
-        "title": "Contacto - Repartito",
+        "title": "Contacto - TopeDeGama",
         "description": "Ponte en contacto con nosotros. Estamos aquí para ayudarte."
       },
       "title": "Ponte en Contacto",
@@ -913,7 +946,7 @@
         "privacy": "Política de Privacidad"
       },
       "copy": "Todos los derechos reservados.",
-      "companyDescription": "Repartito es la plataforma que te ayuda a entender a tus clientes e impulsar tu negocio. Métricas a fondo, retención de clientes y control total de tu empresa.",
+      "companyDescription": "TopeDeGama es la plataforma que te ayuda a entender a tus clientes e impulsar tu negocio. Métricas a fondo, retención de clientes y control total de tu empresa.",
       "navigation": "Navegación",
       "menuCreation": "Creación de Menú Digital",
       "mobileFirst": "Diseño Mobile-First",
@@ -923,7 +956,7 @@
       "description": "El software de gestión definitivo para revolucionar tu forma de vender."
     },
     "landing": {
-      "title": "Repartito"
+      "title": "TopeDeGama"
     }
   },
   "error": {

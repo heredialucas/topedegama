@@ -20,9 +20,9 @@ type CTAProps = {
 };
 
 export const CTA = ({ dictionary, locale = 'es' }: CTAProps) => {
-  // Create WhatsApp message for LupaPyme
+  // Create WhatsApp message for TopeDeGama
   const getWhatsAppMessage = () => {
-    return "¡Hola! Quiero saber más sobre cómo LupaPyme puede ayudar a mi negocio a crecer con métricas y retención de clientes.";
+    return "¡Hola! Quiero saber más sobre cómo TopeDeGama puede ayudar a mi negocio a crecer con métricas y retención de clientes.";
   };
 
   return (
@@ -41,7 +41,7 @@ export const CTA = ({ dictionary, locale = 'es' }: CTAProps) => {
           </h2>
           <div className="w-20 h-1 bg-white rounded-full mx-auto mb-6"></div>
           <p className="text-lg text-white/90">
-            {dictionary.web.home.cta.paragraph || "Usa LupaPyme para convertir tus datos en ganancias y ayudar a crecer tu negocio."}
+            {dictionary.web.home.cta.paragraph || "Usa TopeDeGama para convertir tus datos en ganancias y ayudar a crecer tu negocio."}
           </p>
         </motion.div>
 
