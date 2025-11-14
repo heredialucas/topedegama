@@ -12,4 +12,5 @@ export type FormData = {
     jugos: boolean;
     aguaMineral: boolean;
     soda: boolean;
+    otherCocktail?: string;
 };

@@ -65,6 +65,7 @@ export const NavigationButtons = ({
 🍸 Tragos: ${cocktails}
 🥤 Sin Alcohol: ${nonAlcoholic.length > 0 ? nonAlcoholic.join(', ') : 'Ninguno'}
 🥂 Cristalería: ${formData.needsGlassware === 'si' ? 'Sí' : 'No'}
+${formData.otherCocktail ? `🍹 Otra bebida distinta: ${formData.otherCocktail}` : ''}
 
 ¡Espero su respuesta con el presupuesto! 🙏
     `.trim();

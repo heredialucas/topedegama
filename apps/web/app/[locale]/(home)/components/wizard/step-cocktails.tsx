@@ -10,8 +10,8 @@ type StepProps = {
 
 const cocktails = [
     'Gin', 'Fernet', 'Cerveza', 'Daiquiri', 'Aperol', 'Negroni',
-    'Garibaldo (Campari)', 'Mojito', 'Sex on the Beach', 'Caipiroska',
-    'Cuba Libre', 'Baileys Frozen'
+    'Garibaldi (Campari)', 'Mojito', 'Sex on the Beach', 'Caipiroska',
+    'Cuba Libre', 'Baileys Frozen', 'Whisky'
 ];
 
 const nonAlcoholicDrinks = [
@@ -51,7 +51,7 @@ export const StepCocktails = ({ formData, updateFormData }: StepProps) => {
             {/* Cocktails */}
             <div className="mb-6">
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">Tragos</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-48 overflow-y-auto p-2 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-2 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
                     {cocktails.map((cocktail) => (
                         <label key={cocktail} className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
                             <input
@@ -63,6 +63,17 @@ export const StepCocktails = ({ formData, updateFormData }: StepProps) => {
                             <span className="text-sm text-gray-800 dark:text-white">{cocktail}</span>
                         </label>
                     ))}
+                </div>
+                {/* Otra bebida */}
+                <div className="flex items-center gap-2 mt-4 p-2 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+                    <span className="text-sm text-gray-800 dark:text-white">Otra bebida:</span>
+                    <input
+                        type="text"
+                        value={formData.otherCocktail || ''}
+                        onChange={e => updateFormData({ otherCocktail: e.target.value })}
+                        placeholder="Escribí la bebida..."
+                        className="flex-1 px-2 py-1 rounded border border-gray-300 focus:border-[#0d4b3d] focus:outline-none text-sm bg-white dark:bg-gray-900 text-gray-800 dark:text-white"
+                    />
                 </div>
             </div>
 
